@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+ext {
+    beamVersion = '2.13.0'
+    slf4jVersion = '1.7.26'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.apache.beam:beam-sdks-java-core:$beamVersion"
+    runtime "org.apache.beam:beam-runners-direct-java:$beamVersion"
+    compile "org.slf4j:slf4j-api:$slf4jVersion"
+    compile "org.slf4j:slf4j-jdk14:$slf4jVersion"
+    compile "org.codehaus.groovy:groovy:$groovyVersion"
+}
